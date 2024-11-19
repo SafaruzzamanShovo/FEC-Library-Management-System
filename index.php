@@ -2,6 +2,8 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
+include('accessibility-panel.php');
+
 if($_SESSION['login']!=''){
   $_SESSION['login']='';
 }
@@ -52,7 +54,7 @@ if(isset($_POST['login']))
   <!-- GOOGLE FONT -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
-
+    
 </head>
 
 <body>
@@ -118,6 +120,72 @@ if(isset($_POST['login']))
       </div>
     </div>
   </div>
+
+<!-- Library Stats Section Start -->
+<div class="container" style="margin-top:-150px; margin-bottom:50px;">
+  <h4 class="text-center" style="font-size: 2.5rem; font-weight: 600; color: #333;">Library Statistics</h4>
+  <div class="row">
+    <!-- Books in Collection -->
+    <div class="col-md-4 col-sm-6 text-center mb-4">
+      <div class="stat-card p-5 rounded shadow-lg" style="background-color: #e8f5e9; transition: transform 0.3s ease, box-shadow 0.3s ease; padding:20px; margin:10px;">
+        <i class="fa fa-book" style="font-size: 4rem; color: #4CAF50;"></i>
+        <h3 style="font-size: 3rem; color: #333; font-weight: 700;">500+</h3>
+        <p style="font-size: 1.4rem; color: #555;">Books in Collection</p>
+      </div>
+    </div>
+    
+    <!-- Active Users -->
+    <div class="col-md-4 col-sm-6 text-center mb-4">
+      <div class="stat-card p-5 rounded shadow-lg" style="background-color: #e3f2fd; transition: transform 0.3s ease, box-shadow 0.3s ease; padding:20px; margin:10px;">
+        <i class="fa fa-users" style="font-size: 4rem; color: #2196F3;"></i>
+        <h3 style="font-size: 3rem; color: #333; font-weight: 700;">200+</h3>
+        <p style="font-size: 1.4rem; color: #555;">Active Users</p>
+      </div>
+    </div>
+    
+    <!-- Daily Visitors -->
+    <div class="col-md-4 col-sm-6 text-center mb-4">
+      <div class="stat-card p-5 rounded shadow-lg" style="background-color: #fff3e0; transition: transform 0.3s ease, box-shadow 0.3s ease; padding:20px; margin:10px;">
+        <i class="fa fa-calendar" style="font-size: 4rem; color: #FF5722;"></i>
+        <h3 style="font-size: 3rem; color: #333; font-weight: 700;">50+</h3>
+        <p style="font-size: 1.4rem; color: #555;">Daily Visitors</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Library Stats Section End -->
+
+<!-- CSS to improve hover effects -->
+<style>
+  .stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-card i {
+    transition: color 0.3s ease;
+  }
+
+  .stat-card:hover i {
+    color: #333;
+  }
+
+  /* Making the cards responsive */
+  @media (max-width: 768px) {
+    .stat-card {
+      padding: 4rem 3rem;
+    }
+    .stat-card i {
+      font-size: 3.5rem;
+    }
+    .stat-card h3 {
+      font-size: 2.5rem;
+    }
+  }
+</style>
+
+
+
 
 
   <!-- CONTENT-WRAPPER SECTION END-->
